@@ -1,0 +1,8 @@
+AC_Bagnes_R72_0001.xml
+AC_Bagnes_R72_0005.xml
+AC_Bagnes_R72_0006.xml
+AC_Bagnes_R72_0007.xml
+AC_Bagnes_R72_0008.xml
+AC_Bagnes_R72_0009.xml
+AC_Bagnes_R72_0010.xml
+METS.xml
