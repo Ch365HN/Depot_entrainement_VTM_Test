@@ -124,8 +124,13 @@ Les mauvais choix concernant une mauvaise utilisation du vocabulaire SegmOnto qu
 ### Avec Python
 La création d'un code en python pour répartir les données en _train_, _dev_ et _test_.
 
-## Le code en python
-le fichier randomXML permet une répartition aléatoire des fichiers xml en trois set : un pour l’entraînement, un pour la évaluation et un dernier pour le test. Ces sets sont générés de manière aléatoire pour éviter les biais dû aux changement d’écriture, de formats etc.  
+### Avec l'intégration continue HTR United
+Je ne suis pas parvenue à résoudre cette erreur:
+× Segmonto's test at the zone's level failed: 1 wrongly tagged zones.
+    ┗ Missing tag for zone(s) is forbidden (1 annotations): #eSc_dummyblock_
+
+## Les codes en python
+Le fichier randomXML permet une répartition aléatoire des fichiers xml en trois sets : un pour l’entraînement, un pour la évaluation et un dernier pour le test. Ces sets sont générés de manière aléatoire pour éviter les biais dus aux changements d’écriture, de formats etc.  
 
 ## Les badges ou tags d'HTR-united
 ![characters badge](badges/characters.svg) ![regions badge](badges/regions.svg) ![lines badge](badges/lines.svg) ![files badge](badges/files.svg) 
