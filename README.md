@@ -25,7 +25,7 @@ En août 2022, ce registre a été photographié par l'entreprise Bureau Clio S�
 Les colonnes et les lignes du formlaire n'ont pas toujours été respectées par les différentes mains qui sont intervenues sur les pages du manuscrit, ce qui ne facilite ni la segmentation (voir ci-dessous), ni l'OCR.
 
 ## La technologie
-La description de la technologie est tirée du github de [Thibault Maillard](https://github.com/vtm-topo/impot-batiment).
+La description de la technologie est tirée du github de [Thibault Maillard](https://github.com/vtm-topo/impot-batiment)(stagiaire UNIGE, dans le cadre de ce même projet, toujours sous la direction du Dr Simon Gabay).
 
 ### - kraken
 Pour effectuer la reconnaissance optique de caractères (OCR ou HTR), nous utilisons le système [kraken](https://kraken.re/master/index.html), un système de deep learning pour HTR (Handwritten Text Recognition).
@@ -40,15 +40,14 @@ Le Deep Learning nécessite des ressources computationnelles importantes. Il est
 Nous utilisons également la version d'eScriptorium hébergée par l'Université, appelée [FoNDUE](https://github.com/FoNDUE-HTR/Documentation).
 
 ## Les modèles utilisés
-Le modèle de reconnaissance optique de caractères de base qui a été utilisé est celui-ci: [lectaurep_base] (https://github.com/HTR-United/lectaurep-repertoires) qui a été fine-tuné par Thibault Maillard.
-Le modèle de segmentation des zones qui a été utilisé est celui-ci: 
-Dans la mesure du possible, ces deux modèles seront fine-tunés.
+L’OCRisation du document a été faite grâce à l’instance eScriptorium de l’université de Genève FoNDUE.  Le modèle de reconnaissance optique de caractères de base qui a été utilisé a été mise au point par Alix Chagué et Thibault Clérice ; il se nomme [HTR-United - Manu McFrench V3 pour Manuscripts of Modern and Contemporaneous French](https://zenodo.org/records/10874058); en automne 2022, il avait été fine-tuné par T. Maillard (stagiaire UNIGE, dans le cadre de ce même projet, sous la direction du Dr Simon Gabay) et avait atteint une précision de 94.1%.
+Le modèle de segmentation des zones qui a été utilisé se nomme [lectaurep_base](https://github.com/HTR-United/lectaurep-repertoires/); il avait également été fine-tuné par T. Maillard, mais n'avait atteint une précision satisfaisante pour être utilisé (66.7%).
 
 ## La segmentation
 ### La segmentation des zones
 La segmentation suit l'ontologie [SegmOnto](https://segmonto.github.io/).
 SegmOnto propose un vocabulaire contrôlé pour décrire le contenu des pages de livres ou de manuscrits, afin d'homogénéiser les données requises par les analyseurs de mise en page. 
-Par ailleurs, notre segmentation s'inspire de celle appliquée en 2022 par Thibault Maillard (stagiaire UNIGE, dans le cadre de ce même projet, toujours sous la direction du Dr Simon Gabay) à des formulaires de registres fonciers très sembles au registre utilisé dans ce projet.
+Par ailleurs, notre segmentation s'inspire de celle appliquée en 2022 par Thibault Maillard à des formulaires de registres fonciers très sembles au registre utilisé dans ce projet.
 
 #### Les zones
 Les zones (ou "Region types" selon le vocabulaire d'eScriptorium) utilisées pour segmenter les pages de ce forumlaire sont au nombre de six :
@@ -107,27 +106,6 @@ Exemple d'un texte biffé à l'horizontal et transcrit entre double crochets
 Exemple d'un texte biffé à la vertical et qui n'est pas transcrit entre double crochets
 ![Exemple d'un texte biffé à la vertical](images/TexteBiffeVertical.JPG)
 
-## Les difficultés rencontrées
-### Avec eScriptorium:
-La maîtrise d'eScriptorium
-Dans la nouvelle version d'eScriptorium, la résolution des images n'est pas suffisante pour transcrire efficacement.
-Les masques
-La numérotation automatique des lignes n'a pas pu être modifiée, car elle est rendue impossible à cause du chevauchement des pastilles et elle aurait demandé trop de travail.
-L'aspect chronophage de la segmentation. La segmentation et la transcription d'une page demandent 45 minutes à une personne entraînée et qui maîtrise eScriptorium.
-Le modèle de segmentation est assez bon en ce qui concerne la reconnaissance des lignes, mais ne donne aucun résultat en ce qui concerne la reconnaissance des zones, si bien que celles-ci doivent se faire manuellement.
-Le modèle de segmentation doit être fine-tuné.
-Les mauvais résultats de la reconnaissance des textes imprimés dans les en-têtes. A se demander s'il ne faut pas supprimer la zone correspondant à ces en-têtes.  
-
-### Avec le vocabulaire SegmOnto
-Les mauvais choix concernant une mauvaise utilisation du vocabulaire SegmOnto qui engendre une perte de temps si l'on souhaite faire des modifications dans l'ontologie. 
-
-### Avec Python
-La création d'un code en python pour répartir les données en _train_, _dev_ et _test_.
-
-### Avec l'intégration continue HTR United
-Je ne suis pas parvenue à résoudre cette erreur:
-× Segmonto's test at the zone's level failed: 1 wrongly tagged zones.
-    ┗ Missing tag for zone(s) is forbidden (1 annotations): #eSc_dummyblock_
 
 ## Les codes en python
 Le fichier randomXML permet une répartition aléatoire des fichiers xml en trois sets : un pour l’entraînement, un pour la évaluation et un dernier pour le test. Ces sets sont générés de manière aléatoire pour éviter les biais dus aux changements d’écriture, de formats etc.  
