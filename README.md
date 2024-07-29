@@ -106,8 +106,10 @@ Exemple d'un texte biffé à la vertical et qui n'est pas transcrit entre double
 ![Exemple d'un texte biffé à la vertical](images/TexteBiffeVertical.JPG)
 
 
-## Les codes en python
-Le fichier randomXML permet une répartition aléatoire des fichiers xml en trois sets : un pour l’entraînement, un pour la évaluation et un dernier pour le test. Ces sets sont générés de manière aléatoire pour éviter les biais dus aux changements d’écriture, de formats etc.  
+## Présentation des différents fichiers
+Le fichier "htr-united.yml" permet un contrôle continu et automatique de la qualité des données grâce à quatre outils proposés par HTR-United.
+Le fichier randomXML permet une répartition aléatoire des fichiers xml en trois sets : un pour l’entraînement (train.txt), un pour la évaluation (dev.txt) et un dernier pour le test (test.txt). Ces sets sont générés de manière aléatoire pour éviter les biais dus aux changements d’écriture, de formats etc.
+Le fichier remove_empy_zone.py supprime les zones vides. Parfois, dans eScriptorium, lors de la segmentation et de la transcription, des zones fantômes sont créées par inadvertance. Extrêmement petites, celles-ci peuvent être impossible à détecter à l'oeil nu.
 
 ## Les badges ou tags d'HTR-united
 ![characters badge](badges/characters.svg) ![regions badge](badges/regions.svg) ![lines badge](badges/lines.svg) ![files badge](badges/files.svg) 
