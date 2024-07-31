@@ -5,4 +5,3 @@ AC_Bagnes_R72_0007.xml
 AC_Bagnes_R72_0008.xml
 AC_Bagnes_R72_0009.xml
 AC_Bagnes_R72_0010.xml
-METS.xml

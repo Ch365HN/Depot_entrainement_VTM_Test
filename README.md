@@ -1,7 +1,7 @@
 
 # Dépôt d'entraînement test pour des données HTR : la reconnaissance optique de caractères d'un registre manuscrit du XIXe siècle
 Ceci est un dépôt de vérité de terrain créée grâce au logiciel eScriptorium. Le document à partir duquel la vérité de terrain a été produite est un registre de la fin XIXe siècle. 
-Ce dépôt est en réalité un test effectué avec les 10 premières pages du document. Il s'agit d'une étape d'un projet plus important qui consiste à utiliser la reconnaissance optique de caractères manuscrits sur l'ensemble du registre, puis à exporter les données en xml ALTO et à les annoter.
+Ce dépôt est en réalité un test effectué avec les 10 premières pages du document. Il s'agit d'une étape d'un projet plus important qui consiste à utiliser la reconnaissance optique de caractères manuscrits sur l'ensemble du registre, puis à exporter les données en XML ALTO et à les annoter.
 
 
 ## Le projet
@@ -16,9 +16,9 @@ Ce registre foncier regroupe les biens-fonds des contribuables d'une commune (Ba
 
 ## Description des données
 
-Toutes les pages sont constituées par le même formulaire avec au sommet un titre courant imprimé et un emplacement réservé à la foliotation qui, elle, est manuscrite et s'avère en réalité une pagination. A noter qu'il existe quelques erreurs de pagination (pagination à double, saut de page, etc.). Cependant, ce n'est pas le cas dans les dix premiers feuillets. Sous le titre courant, le formulaire comporte un en-tête qui se divise en deux partie. Une partie comprend le nom et le prénom du contribuable, sa filiation et son lieu de domicile. Elle mélange l'imprimé et le manuscrit. L'autre, exclusivement imprimée, est constituée par les en-têtes des treize colonnes du formulaire qui se présentent ainsi de gauche à droite : le numéro de l’immeuble, le nom local (toponyme), la nature du bien-fonds et les quatre confins, les toises  locales, la contenance en mètres carrés, le montant de la taxe, le capital imposable en francs et en centimes et les mutations.
+Toutes les pages sont constituées par le même formulaire avec au sommet un titre courant imprimé et un emplacement réservé à la foliotation qui, elle, est manuscrite et s'avère en réalité une pagination. A noter qu'il existe quelques erreurs de pagination (pagination à double, saut de page, etc.). Cependant, ce n'est pas le cas dans les dix premiers feuillets. Sous le titre courant, le formulaire comporte un en-tête qui se divise en deux parties. Une partie comprend le nom et le prénom du contribuable, sa filiation et son lieu de domicile. Elle mélange l'imprimé et le manuscrit. L'autre, exclusivement imprimée, est constituée par les en-têtes des treize colonnes du formulaire qui se présentent ainsi de gauche à droite : le numéro de l’immeuble, le nom local (toponyme), la nature du bien-fonds et les quatre confins, les toises  locales, la contenance en mètres carrés, le montant de la taxe, le capital imposable en francs et en centimes et les mutations.
 
-En août 2022, ce registre a été photographié dans la perspective de faire de la transcription automatique. Les images produites sont au format jpg et ont une résolution de 600 ppp .
+En août 2022, ce registre a été photographié dans la perspective de faire de la transcription automatique. Les images produites sont au format jpg et ont une résolution de 600 ppp.
 
 ![Exemple d'une page du formulaire](images/ACBagnesR72_0043.jpg)
 
@@ -41,18 +41,18 @@ Nous utilisons également la version d'eScriptorium hébergée par l'Université
 
 ## Les modèles utilisés
 L’OCRisation du document a été faite grâce à l’infrastructure de l’université de Genève et au logiciel eScriptorium Fondue, une application en ligne dont l'accès est réservé.
-Le modèle de reconnaissance optique de caractères de base utilisé a été mise au point par Alix Chagué et Thibault Clérice ; il se nomme [HTR-United - Manu McFrench V3 pour Manuscripts of Modern and Contemporaneous French](https://zenodo.org/records/10874058); en automne 2022, ce modèle avait été fine-tuné par T. Maillard (stagiaire UNIGE, dans le cadre de ce même projet, sous la direction du Dr Simon Gabay) et avait atteint une précision de 94.1%.
-Le modèle de segmentation des zones qui a été utilisé se nomme [lectaurep_base](https://github.com/HTR-United/lectaurep-repertoires/). Il a été mis au point par Alix Chagué et son équipe; il avait également été fine-tuné par T. Maillard et avait atteint une précision de 66.7%.
+Le modèle d'OCRisation de base utilisé a été mise au point par Alix Chagué et Thibault Clérice ; il se nomme [HTR-United - Manu McFrench V3 pour Manuscripts of Modern and Contemporaneous French](https://zenodo.org/records/10874058); en automne 2022, ce modèle avait été fine-tuné par Th. Maillard (stagiaire UNIGE, dans le cadre de ce même projet, sous la direction du Dr Simon Gabay) et avait atteint une précision de 94.1%.
+Le modèle de segmentation des zones qui a été utilisé se nomme [lectaurep_base](https://github.com/HTR-United/lectaurep-repertoires/). Il a été mis au point par Alix Chagué et son équipe; il avait également été fine-tuné par Th. Maillard et avait atteint une précision de 66.7%.
 
 ## La segmentation
 ### La segmentation des zones
 La segmentation suit l'ontologie [SegmOnto](https://segmonto.github.io/).
 SegmOnto propose un vocabulaire contrôlé pour décrire le contenu des pages de livres ou de manuscrits, afin d'homogénéiser les données requises par les analyseurs de mise en page. 
-Par ailleurs, notre segmentation s'inspire de celle appliquée en 2022 par T. Maillard à des formulaires de registres fonciers très sembles au registre utilisé dans ce projet.
+Par ailleurs, notre segmentation s'inspire de celle appliquée en 2022 par Th. Maillard à des formulaires de registres fonciers très sembles au registre utilisé dans ce projet.
 
 #### Les zones
 ![Exemple d'une page du formulaire dont les zones sont segmentées](images/ACBagnesR72_0035_SegmentationZones.jpg)
-Les zones (ou "Region types" selon le vocabulaire d'eScriptorium) identifiées pour segmenter les pages de ce formulaire sont au nombre de six : :
+Les zones (ou "Region types" selon le vocabulaire d'eScriptorium) identifiées pour segmenter les pages de ce formulaire sont au nombre de six :
 - CustomZone:contribuable
 - CustomZone:entry\#1
 - CustomZone:entry\#2
@@ -108,7 +108,7 @@ Exemple d'un texte biffé à la vertical et qui n'est pas transcrit entre double
 
 ## Présentation des différents fichiers
 Le fichier "htr-united.yml" permet un contrôle continu et automatique de la qualité des données grâce à quatre outils proposés par HTR-United.
-Le fichier randomXML permet une répartition aléatoire des fichiers xml en trois sets : un pour l’entraînement (train.txt), un pour la évaluation (dev.txt) et un dernier pour le test (test.txt). Ces sets sont générés de manière aléatoire pour éviter les biais dus aux changements d’écriture, de formats etc.
+Le fichier randomXML permet une répartition aléatoire des fichiers XML en trois sets : un pour l’entraînement (train.txt), un pour l'évaluation (dev.txt) et un dernier pour le test (test.txt). Ces sets sont générés de manière aléatoire pour éviter les biais dus aux changements d’écriture, de formats etc.
 Le fichier remove_empy_zone.py supprime les zones vides. Parfois, dans eScriptorium, lors de la segmentation et de la transcription, des zones fantômes sont créées par inadvertance. Extrêmement petites, celles-ci peuvent être impossibles à détecter à l'oeil nu.
 
 ## Les badges ou tags d'HTR-united
