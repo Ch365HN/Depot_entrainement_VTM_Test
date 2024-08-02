@@ -36,12 +36,12 @@ Pour créer ces exemples, nous utilisons le logiciel [eScriptorium](https://escr
 eScriptorium permet d'annoter les pages: indiquer quelles lignes il faut transcrire, quelle zone de reconnaissance est générée à partir d'une ligne et comment la transcrire. Il permet également de découper le document en types de zones et de lignes.
 
 ### - l'infrastructure de l'Université de Genève
-Le Deep Learning nécessite des ressources computationnelles importantes. Il est possible de faire fonctionner kraken sur un simple ordinateur mais pour travailler sur un grand nombre d'images, cela ne suffit pas. Nous utilisons donc l'accès au HPC (super-ordinateur) de l'Université de Genève. L'Université possède deux super-ordinateurs nommés Baobab et Yggdrasil. Nous utilisons Yggdrasil.
+Le Deep Learning nécessite des ressources computationnelles importantes. Il est possible de faire fonctionner kraken sur un simple ordinateur mais pour travailler sur un grand nombre d'images, cela ne suffit pas. Nous utilisons donc l'accès au HPC (super-ordinateur) de l'Université de Genève. L'Université possède trois super-ordinateurs nommés Baobab, Yggdrasil et Bamboo. Nous utilisons Yggdrasil.
 Nous utilisons également la version d'eScriptorium hébergée par l'Université, appelée [FoNDUE](https://github.com/FoNDUE-HTR/Documentation).
 
 ## Les modèles utilisés
 L’OCRisation du document a été faite grâce à l’infrastructure de l’université de Genève et au logiciel eScriptorium Fondue, une application en ligne dont l'accès est réservé.
-Le modèle d'OCRisation de base utilisé a été mise au point par Alix Chagué et Thibault Clérice ; il se nomme [HTR-United - Manu McFrench V3 pour Manuscripts of Modern and Contemporaneous French](https://zenodo.org/records/10874058); en automne 2022, ce modèle avait été fine-tuné par Th. Maillard (stagiaire UNIGE, dans le cadre de ce même projet, sous la direction du Dr Simon Gabay) et avait atteint une précision de 94.1%.
+Le modèle d'OCRisation de base utilisé a été mis au point par Alix Chagué et Thibault Clérice ; il se nomme [HTR-United - Manu McFrench V3 pour Manuscripts of Modern and Contemporaneous French](https://zenodo.org/records/10874058); en automne 2022, ce modèle avait été fine-tuné par Th. Maillard (stagiaire UNIGE, dans le cadre de ce même projet, sous la direction du Dr Simon Gabay) et avait atteint une précision de 94.1%.
 Le modèle de segmentation des zones qui a été utilisé se nomme [lectaurep_base](https://github.com/HTR-United/lectaurep-repertoires/). Il a été mis au point par Alix Chagué et son équipe; il avait également été fine-tuné par Th. Maillard et avait atteint une précision de 66.7%.
 
 ## La segmentation
